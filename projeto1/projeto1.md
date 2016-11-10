@@ -12,9 +12,9 @@ Programa de WordCount original (1-3) e WordCount Modificado (4-6)
 ------------------------------------------------------------------
 
 1. First term is "a-breeding". Occurs "1" time.
-2. Third term before the last is "zeals". Occurs "1" time.
+2. Third term from the last is "zed". Occurs "1" time.
 3. 28716 unique terms exist.
 4. First term is "aaron". Occurs "96" times.
-5. Third term before the last is "zeals". Occurs "1" time.
+5. Third term from the last is "zed". Occurs "1" time.
 6. 21882 unique terms exist.
 
