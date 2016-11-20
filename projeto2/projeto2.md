@@ -1,11 +1,63 @@
 Projeto de Implementação 2
 ===========================
 
+Pairs Implementation
+---------------------
+Command: hadoop jar target/projeto2-1.0-SNAPSHOT-fatjar.jar br.edu.ufam.anibrata.PairsPMI -input <Shakespeare.txt/simplewiki.txt> -output npairs -reducers 1 -imc <y/n> 
+
+-imc - y for enabling in-mapper-combining and n to deactivate
+
+Mapper1 - Input  : Shakespeare.txt file
+	  Output : (Term, 1) for each of the distinct terms in the collection.
+
+In Mapper Combiner - Input : (Term, 1) for each of the distinct terms in the collection
+	  Output : (Term, Frequency) for each distinct term of the collection
+
+Reducer1 - Input : (Term, Frequency (in case of In Mapper Combining)/ 1(without combiner)) for each term
+	  Output : (Term, Final Frequency) for all terms in the collection
+
+Mapper2 - Input : Shakespeare.txt file
+	 Output : [(Term1, Term2), 1] for all terms of the collection where term1 and term2 are different. Use a map / associative array for ease.
+
+Combiner - Input : Output of Mapper2
+	  Output : Generate [(Term1, Term2), Co-occurences] for each pair of distinct terms in the collection
+
+Reducer - Input : Output of Combiner above & Output of Reducer1(The data is stored in the memory in a map to access termwise frequency and total number of terms)
+	 Output : Calculates the PMI from the co-occurences of the terms and generates the final output as [(term1, term2), PMI(1,2)]
+
+
+Stripes Implementation
+-----------------------
+Command: hadoop jar target/projeto2-1.0-SNAPSHOT-fatjar.jar br.edu.ufam.anibrata.StripesPMI -input <Shakespeare.txt/simplewiki.txt> -output nstripes -reducers 1 -imc <y/n> 
+
+-imc - y for enabling in-mapper-combining and n to deactivate
+
+Mapper1 - Input  : Shakespeare.txt file
+	  Output : (Term, 1) for each of the distinct terms in the collection.
+
+In Mapper Combiner - Input : (Term, 1) for each of the distinct terms in the collection
+	  Output : (Term, Frequency) for each distinct term of the collection
+
+Reducer1 - Input : (Term, Frequency (in case of In Mapper Combining)/ 1(without combiner)) for each term
+	  Output : (Term, Final Frequency) for all terms in the collection
+
+Mapper2 - Input : Shakespeare.txt file
+	 Output : [Term1, (Term2, 1), (Term3, 1), ...] for all terms of the collection where term1 and term2 are different. Use a hashmap / treeset.
+
+Combiner - Input : Output of Mapper2
+	  Output : Generate [Term1, (Term2, Co-occurences), (Term3, Co-occurences), ...] for each pair of distinct terms in the collection.
+
+Reducer - Input : Output of Combiner above & Output of Reducer1(The data is stored in the memory in a map to access termwise frequency and total number of terms)
+	 Output : Uses HashMap again to calculate the PMI from the co-occurences of the terms and generates the final output as [(term1, term2), PMI(1,2)]
+
+Note: Run script results.sh to get the results of question 3-5 and 8-10.
+
+
 Data for Shakespeare's Combined works text file 
 ------------------------------------------------
-1.
+1. Average execution time for Pairs: 82.22 seconds. Average execution time for Stripes: 115.83 seconds.
 
-2.
+2. Average execution time for Pairs without combiners: 80.81 seconds. Average execution time for Stripes without combiners: 112.32 seconds. 
 
 3. Number of distinct pairs :41007
 
@@ -30,9 +82,9 @@ For this pair the probability of occurence of the pair of the words is comparati
 
 Data for Simple Wiki text file
 -------------------------------
-6.
+6. Average execution time for Pairs: 71.78 seconds. Average execution time for Stripes: 109.49 seconds.
 
-7.
+7. Average execution time for Pairs without combiners: 68.86 seconds. Average execution time for Stripes without combiners: 105.57 seconds. 
 
 8. Number of distinct pairs :4035
 
