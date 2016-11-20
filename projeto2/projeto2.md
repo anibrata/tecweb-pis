@@ -19,10 +19,10 @@ Reducer1 - Input : (Term, Frequency (in case of In Mapper Combining)/ 1(without 
 Mapper2 - Input : Shakespeare.txt file
 	 Output : [(Term1, Term2), 1] for all terms of the collection where term1 and term2 are different. Use a map / associative array for ease.
 
-Combiner - Input : Output of Mapper2
+Combiner2 - Input : Output of Mapper2
 	  Output : Generate [(Term1, Term2), Co-occurences] for each pair of distinct terms in the collection
 
-Reducer - Input : Output of Combiner above & Output of Reducer1(The data is stored in the memory in a map to access termwise frequency and total number of terms)
+Reducer2 - Input : Output of Combiner above & Output of Reducer1(The data is stored in the memory in a map to access termwise frequency and total number of terms)
 	 Output : Calculates the PMI from the co-occurences of the terms and generates the final output as [(term1, term2), PMI(1,2)]
 
 
@@ -44,10 +44,10 @@ Reducer1 - Input : (Term, Frequency (in case of In Mapper Combining)/ 1(without 
 Mapper2 - Input : Shakespeare.txt file
 	 Output : [Term1, (Term2, 1), (Term3, 1), ...] for all terms of the collection where term1 and term2 are different. Use a hashmap / treeset.
 
-Combiner - Input : Output of Mapper2
+Combiner2 - Input : Output of Mapper2
 	  Output : Generate [Term1, (Term2, Co-occurences), (Term3, Co-occurences), ...] for each pair of distinct terms in the collection.
 
-Reducer - Input : Output of Combiner above & Output of Reducer1(The data is stored in the memory in a map to access termwise frequency and total number of terms)
+Reducer2 - Input : Output of Combiner above & Output of Reducer1(The data is stored in the memory in a map to access termwise frequency and total number of terms)
 	 Output : Uses HashMap again to calculate the PMI from the co-occurences of the terms and generates the final output as [(term1, term2), PMI(1,2)]
 
 Note: Run script results.sh to get the results of question 3-5 and 8-10.
