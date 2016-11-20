@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>br.edu.ufam.anibrata</groupId>
-  <artifactId>projeto1</artifactId>
+  <artifactId>projeto2</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>projeto1</name>
+  <name>projeto2</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -68,6 +68,16 @@
         <groupId>args4j</groupId>
         <artifactId>args4j</artifactId>
         <version>2.32</version>
+    </dependency>
+    <dependency>
+      <groupId>tl.lin</groupId>
+      <artifactId>lintools-datatypes</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+    <groupId>colt</groupId>
+     <artifactId>colt</artifactId>
+     <version>1.2.0</version>
     </dependency>
   </dependencies>
 </project>
