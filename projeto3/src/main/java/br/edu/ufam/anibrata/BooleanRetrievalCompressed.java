@@ -136,7 +136,6 @@ public class BooleanRetrievalCompressed extends Configured implements Tool {
         key.set(term);
 
         int partition = (term.hashCode() & Integer.MAX_VALUE) % numOfReducers;
-        //System.out.println(partition);
         index = new MapFile.Reader(new Path(pathToIndex + "/part-r-0000" + partition), fileSystem.getConf());
         index.get(key, value);
 
