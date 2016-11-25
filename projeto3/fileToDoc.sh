@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ipf='inputFile1.txt'
+ipf='skspeare.txt'
 
 if [ -s "$ipf" ]
 then
