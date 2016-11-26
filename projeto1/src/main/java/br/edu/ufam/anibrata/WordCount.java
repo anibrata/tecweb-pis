@@ -61,7 +61,8 @@ public class WordCount extends Configured implements Tool {
         throws IOException, InterruptedException {
       String line = ((Text) value).toString();
       StringTokenizer itr = new StringTokenizer(line);
-      while (itr.hasMoreTokens()) {
+      while (itr.hasMoreTokens()) 
+      {
         String w = itr.nextToken().toLowerCase().replaceAll("(^[^a-z]+|[^a-z]+$)", "");
         if (w.length() == 0) continue;
 
