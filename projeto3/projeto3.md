@@ -9,10 +9,12 @@ INDEX: hadoop jar target/projeto3-1.0-SNAPSHOT-fatjar.jar br.edu.ufam.anibrata.B
 2) Run this script exactly python parserXML.py simplewiki.xml "{http://www.mediawiki.org/xml/export-0.10/}page" simplewiki.txt to get the text file for indexing.
 
 INDEX: hadoop jar target/projeto3-1.0-SNAPSHOT-fatjar.jar br.edu.ufam.anibrata.BuildInvertedIndexCompressed -input simplewiki.txt -output swdIndex -reducers 5
+
 QUERY: hadoop jar target/projeto3-1.0-SNAPSHOT-fatjar.jar br.edu.ufam.anibrata.BooleanRetrievalCompressed -index swdIndex -collection simplewiki.txt -query <query string provided in the answers below>
 
 1. For the collection Shakespeare.txt
 $ du -h *
+
 668K	part-r-00000
 664K	part-r-00001
 668K	part-r-00002
@@ -21,6 +23,22 @@ $ du -h *
 
 2. For the collection SimpleWiki.txt
 $ du -h *
+=======
+
+668K	part-r-00000
+
+664K	part-r-00001
+
+668K	part-r-00002
+
+656K	part-r-00003
+
+676K	part-r-00004
+
+
+2. For the collection SimpleWiki.txt
+$ du -h *
+-------------------------------------
 43M	part-r-00000
 44M	part-r-00001
 46M	part-r-00002
@@ -33,6 +51,10 @@ $ du -h *
 68501762	ns 4 revision comment contractions sha1 6rnorv9dv54lr7uwpdq377atgizxt2b text tex...
 86363337	ns 0 revision comment fixed typo fixed grammar sha1 3wrnbhrsb29wjenpzaikat26rwyl...
 388181461	ns 0 revision comment fixing links to disambiguation pages and or general cleanu...
+<<<<<<< HEAD
+=======
+
+>>>>>>> aeff5df60ed8c5d2539d7653152e951d3e4b2023
 3(b).	Query: "means deceit AND"
 33085982	ns 0 revision comment reverted 1 edit by special contributions 88 98 33 129 88 9...
 35666598	ns 0 revision comment removing link fa template d wikidata development plan badg...
@@ -47,7 +69,11 @@ $ du -h *
 None
 
 3(d).	Query: "unhappy outrageous OR good your AND OR fortune AND"
+<<<<<<< HEAD
 5136829		ns 0 revision comment reverted 2 edits by special contributions 153 107 192 205 ...
+=======
+5136829	ns 0 revision comment reverted 2 edits by special contributions 153 107 192 205 ...
+>>>>>>> aeff5df60ed8c5d2539d7653152e951d3e4b2023
 23141240	restrictions edit sysop move sysop ns 4 revision comment header archives sha1 o1...
 28234662	ns 0 revision sha1 9xp35h2tea6oxhj19h0i9ypw9pmw0pb text texto infobox person n n...
 39766871	ns 0 revision comment a bit sha1 85ifx0djxvzfge2yy68jvp8pt12abar text texto ital...
