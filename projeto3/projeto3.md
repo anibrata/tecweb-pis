@@ -16,10 +16,15 @@ QUERY: hadoop jar target/projeto3-1.0-SNAPSHOT-fatjar.jar br.edu.ufam.anibrata.B
 $ du -h *
 
 668K	part-r-00000
+
 664K	part-r-00001
+
 668K	part-r-00002
+
 656K	part-r-00003
+
 676K	part-r-00004
+
 
 2. For the collection SimpleWiki.txt
 $ du -h *
