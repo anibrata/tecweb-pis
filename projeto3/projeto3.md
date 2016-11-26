@@ -4,9 +4,15 @@ Indexação de Texto
 Notes: 
 ------
 
-1. Run the script fileToDoc.sh to generate the text file for indexing for Shakespeare.txt.  INDEX: hadoop jar target/projeto3-1.0-SNAPSHOT-fatjar.jar br.edu.ufam.anibrata.BuildInvertedIndexCompressed -input skspeare.txt -output sksIndex -reducers 5
+1. Run the script fileToDoc.sh to generate the text file for indexing for Shakespeare.txt.
 
-2. Run this script fileToWikiDoc.sh to get the text file for indexing simplewiki.xml. (Renamed the actual wiki file to simplewiki.xml)  INDEX: hadoop jar target/projeto3-1.0-SNAPSHOT-fatjar.jar br.edu.ufam.anibrata.BuildInvertedIndexCompressed -input simplewiki.txt -output swdIndex -reducers 5  QUERY: hadoop jar target/projeto3-1.0-SNAPSHOT-fatjar.jar br.edu.ufam.anibrata.BooleanRetrievalCompressed -index swdIndex -collection simplewiki.txt -query <query string provided in the answers below>
+   INDEX: hadoop jar target/projeto3-1.0-SNAPSHOT-fatjar.jar br.edu.ufam.anibrata.BuildInvertedIndexCompressed -input skspeare.txt -output sksIndex -reducers 5
+
+2. Run this script fileToWikiDoc.sh to get the text file for indexing simplewiki.xml. (Renamed the actual wiki file to simplewiki.xml)
+
+   INDEX: hadoop jar target/projeto3-1.0-SNAPSHOT-fatjar.jar br.edu.ufam.anibrata.BuildInvertedIndexCompressed -input simplewiki.txt -output swdIndex -reducers 5  
+   QUERY: hadoop jar target/projeto3-1.0-SNAPSHOT-fatjar.jar br.edu.ufam.anibrata.BooleanRetrievalCompressed -index swdIndex -collection simplewiki.txt -query <query string provided in the answers below>  
+
 
 Question 1. Size for the collection Shakespeare.txt
 ----------------------------------------------
