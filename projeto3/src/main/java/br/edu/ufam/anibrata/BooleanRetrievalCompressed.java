@@ -161,7 +161,7 @@ public class BooleanRetrievalCompressed extends Configured implements Tool {
         BufferedReader reader = new BufferedReader(new InputStreamReader(collection));
 
         String d = reader.readLine();
-        return d.length() > 100 ? d.substring(0, 80) + "..." : d;
+        return d.length() > 100 ? d.substring(0, 50) + "..." : d;
     }
 
     public static class Args {
